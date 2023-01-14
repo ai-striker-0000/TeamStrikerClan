@@ -1,0 +1,231 @@
+header {
+  height: 100px;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #818cf8;
+  color: #fff;
+}
+
+.page-header__logo {
+  display: block;
+  position: relative;
+  margin-left: -5px;
+  margin-top: -15px;
+}
+
+
+.page-header__logo img {
+  max-width: 30px;
+  height: auto;
+  margin-right: 12px;
+}
+
+.page-header__logo_text {
+  font-weight: bold;
+  position: relative;
+  top: 11px;
+  font-size: 20px;
+}
+
+.animation-navspinv,
+.page-header__logo img {
+  animation: navspinv 2.4s infinite linear;
+}
+
+
+
+@keyframes navspinv {
+  0% {
+    transform: translate3d(0, -5%, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 5%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, -5%, 0);
+  }
+}
+
+body {
+  background: #18181B;
+}
+/*  .loader
+{
+    height: 150px;
+    overflow: scroll;
+    -ms-overflow-style: none; 
+      scrollbar-width: none; 
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}*/
+
+#popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  width: 600px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 30);
+  background: #18181B;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+
+}
+#popup.active{
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.loader_bg{
+  position: fixed;
+  z-index: 999999;
+  background: #18181B;
+  width: 100%;
+  height: 100%;
+}
+.loader{
+  border: 0 soild transparent;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: calc(50vh - 75px);
+  left: calc(50vw - 75px);
+}
+.loader:before, .loader:after{
+  content: '';
+  border: 1em solid #4f46e5;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: loader 2s linear infinite;
+  opacity: 0;
+}
+.loader:before{
+  animation-delay: .5s;
+}
+@keyframes loader{
+  0%{
+      transform: scale(0);
+      opacity: 0;
+  }
+  50%{
+      opacity: 1;
+  }
+  100%{
+      transform: scale(1);
+      opacity: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Google Font - Poppins */
+  font-family: "Poppins";
+}
+
+section {
+  padding: 50px;
+}
+section h2 {
+  font-size: 60px;
+}
+/* i am not focusing more in the css part we will only focus on the scrollbar part  */
+section p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+/* Now the super main part */
+/* this gets the whole scrollbar including the scrollbar area */
+::-webkit-scrollbar {
+  background: transparent;
+  width: 7px;
+}
+/* webkit scrollbar thumb is the part of the scrollbar which we hold to scroll  */
+::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+  /* we got the background now lets make it round */
+  border-radius: 100px;
+  
+}
+
+@keyframes -webkit-scrollbar{
+  0%{
+      transform: scale(0);
+      opacity: 0;
+  }
+  50%{
+      opacity: 1;
+  }
+  100%{
+      transform: scale(1);
+      opacity: 0;
+  }
+}
+
+
+
+.loader_bg{
+  position: fixed;
+  z-index: 999999;
+  background: #18181B;
+  width: 100%;
+  height: 100%;
+}
+.loader{
+  border: 0 soild transparent;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: calc(50vh - 75px);
+  left: calc(50vw - 75px);
+}
+.loader:before, .loader:after{
+  content: '';
+  border: 1em solid #4f46e5;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: loader 2s linear infinite;
+  opacity: 0;
+}
+.loader:before{
+  animation-delay: .5s;
+}
+@keyframes loader{
+  0%{
+      transform: scale(0);
+      opacity: 0;
+  }
+  50%{
+      opacity: 1;
+  }
+  100%{
+      transform: scale(1);
+      opacity: 0;
+  }
+}
